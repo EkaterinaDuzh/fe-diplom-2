@@ -1,8 +1,8 @@
 /* eslint-disable-next-line no-unused-vars */
 import React, { useContext } from "react";
-import AppContext from "../#context/appContext";
-import RouteContext from "../context/routeContext";
-import OrderContext from "../context/orderContext";
+import AppContext from "../context/appContext.js";
+import RouteContext from "../context/routeContext.js";
+import OrderContext from "../context/orderContext.js";
 import ArrivalImage from "../assets/slider-filter-period-arrival.png";
 import DepartureImage from "../assets/slider-filter-period-departure.png";
 import PassengersImage from "../assets/order-sidebar-passengers-icon.png";

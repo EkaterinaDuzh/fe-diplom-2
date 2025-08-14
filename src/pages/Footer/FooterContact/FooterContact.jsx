@@ -1,7 +1,7 @@
 /* eslint-disable-next-line no-unused-vars */
 import React from "react";
 import { Link } from "react-router-dom";
-import { contacts } from "../utils/contacts";
+import { contacts } from "../utils/contacts.js";
 import "./FooterContact.css";
 
 function FooterContact() {

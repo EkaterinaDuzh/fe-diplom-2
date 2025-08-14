@@ -1,9 +1,9 @@
 /* eslint-disable-next-line no-unused-vars */
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { socials } from "../utils/socials";
-import ValidationEmail from "../services/ValidationEmail";
-import Modal from "../components/Modal/Modal";
+import { socials } from "../utils/socials.js";
+import ValidationEmail from "../services/ValidationEmail.jsx";
+import Modal from "../components/Modal/Modal.jsx";
 import "./FooterSubscribe.css";
 
 function FooterSubscribe() {

@@ -1,7 +1,7 @@
 /* eslint-disable-next-line no-unused-vars */
 import React, { useContext, useState } from "react";
 import PropTypes from "prop-types";
-import AppContext from "../context/appContext";
+import AppContext from "../context/appContext.js";
 import "./OrderResultsControl.css";
 
 const OrderResultsControl = ({ count }) => {

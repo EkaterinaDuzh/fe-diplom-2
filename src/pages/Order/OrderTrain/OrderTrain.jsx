@@ -1,12 +1,12 @@
 /* eslint-disable-next-line no-unused-vars */
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
-import AppContext from "../context/appContext";
-import RouteContext from "../context/routeContext";
-import OrderContext from "../context/orderContext";
+import AppContext from "../context/appContext.js";
+import RouteContext from "../context/routeContext.js";
+import OrderContext from "../context/orderContext.js";
 import { useNavigate } from "react-router-dom";
-import SVGicon from "../components/SVGicon/SVGicon";
-import getTime from '../services/getTime';
+import SVGicon from "../components/SVGicon/SVGicon.jsx";
+import getTime from '../services/getTime.js';
 import "./OrderTrain.css";
 
 const SEAT_TYPES = {

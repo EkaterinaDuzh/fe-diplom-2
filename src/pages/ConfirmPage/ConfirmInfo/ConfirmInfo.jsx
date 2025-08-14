@@ -1,13 +1,13 @@
 /* eslint-disable-next-line no-unused-vars */
 import React, { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import AppContext from "../context/appContext";
-import RouteContext from "../context/routeContext";
-import OrderContext from "../context/orderContext";
-import PayContext from "../context/payContext";
-import ConfirmTrain from "../ConfirmTrain/ConfirmTrain";
-import SVGicon from "../components/SVGicon/SVGicon";
-import Modal from "../components/Modal/Modal";
+import AppContext from "../context/appContext.js";
+import RouteContext from "../context/routeContext.js";
+import OrderContext from "../context/orderContext.js";
+import PayContext from "../context/payContext.js";
+import ConfirmTrain from "../ConfirmTrain/ConfirmTrain.jsx";
+import SVGicon from "../components/SVGicon/SVGicon.jsx";
+import Modal from "../components/Modal/Modal.jsx";
 import "./ConfirmInfo.css";
 
 function ConfirmInfo() {

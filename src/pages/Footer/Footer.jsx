@@ -1,8 +1,8 @@
 /* eslint-disable-next-line no-unused-vars */
 import React from "react";
-import FooterContact from "./FooterContact/FooterContact";
-import FooterSubscribe from "./FooterSubscribe/FooterSubscribe";
-import FooterCopyright from "./FooterCopyright/FooterCopyright";
+import FooterContact from "./FooterContact/FooterContact.jsx";
+import FooterSubscribe from "./FooterSubscribe/FooterSubscribe.jsx";
+import FooterCopyright from "./FooterCopyright/FooterCopyright.jsx";
 import "./Footer.css";
 
 function Footer() {

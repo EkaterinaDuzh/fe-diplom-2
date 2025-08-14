@@ -1,9 +1,9 @@
 /* eslint-disable-next-line no-unused-vars */
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import RouteContext from '../context/routeContext';
-import SeatsWagonDetailsBody from './SeatsWagonDetailsBody/SeatsWagonDetailsBody';
-import SeatsScheme from '../SeatsScheme/SeatsScheme';
+import RouteContext from '../context/routeContext.js';
+import SeatsWagonDetailsBody from './SeatsWagonDetailsBody/SeatsWagonDetailsBody.jsx';
+import SeatsScheme from '../SeatsScheme/SeatsScheme.jsx';
 import './SeatsWagonDetails.css';
 
 const WagonDetails = ({ data, identity, routeState }) => {

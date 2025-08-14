@@ -2,23 +2,23 @@
 import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 
-import AppContext from './context/appContext';
-import RouteContext from './context/routeContext';
-import OrderContext from './context/orderContext';
-import PayContext from './context/payContext';
+import AppContext from './context/appContext.js';
+import RouteContext from './context/routeContext.js';
+import OrderContext from './context/orderContext.js';
+import PayContext from './context/payContext.js';
 
-import { initialAppState } from './utils/initialAppState';
-import { initialRouteState } from './utils/initialRouteState';
-import { initialOrderState } from './utils/initialOrderState';
-import { initialPayState } from './utils/initialPayState';
+import { initialAppState } from './utils/initialAppState.js';
+import { initialRouteState } from './utils/initialRouteState.js';
+import { initialOrderState } from './utils/initialOrderState.js';
+import { initialPayState } from './utils/initialPayState.js';
 
-import StartPage from './pages/StartPage/StartPage';
-import OrderPage from './pages/OrderPage/OrderPage';
-import SeatsPage from './pages/SeatsPage/SeatsPage';
-import PassengersPage from './pages/PassengersPage/PassengersPage';
-import PaymentPage from './pages/PaymentPage/PaymentPage';
-import ConfirmPage from './pages/ConfirmPage/ConfirmPage';
-import FinishPage from './pages/FinishPage/FinishPage';
+import StartPage from './pages/StartPage/StartPage.jsx';
+import OrderPage from './pages/OrderPage/OrderPage.jsx';
+import SeatsPage from './pages/SeatsPage/SeatsPage.jsx';
+import PassengersPage from './pages/PassengersPage/PassengersPage.jsx';
+import PaymentPage from './pages/PaymentPage/PaymentPage.jsx';
+import ConfirmPage from './pages/ConfirmPage/ConfirmPage.jsx';
+import FinishPage from './pages/FinishPage/FinishPage.jsx';
 
 import './App.css';
 

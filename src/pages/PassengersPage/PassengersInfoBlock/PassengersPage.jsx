@@ -1,10 +1,10 @@
 /* eslint-disable-next-line no-unused-vars */
 import React from "react";
-import HeaderOrder from "../Header/HeaderOrder/HeaderOrder";
-import OrderLine from "../Order/OrderLine/OrderLine";
-import OrderDetails from "../Order/OrderDetails/OrderDetails";
-import PassengersInfo from "./PassengersInfo/PassengersInfo";
-import Footer from "../Footer/Footer";
+import HeaderOrder from "../Header/HeaderOrder/HeaderOrder.jsx";
+import OrderLine from "../Order/OrderLine/OrderLine.jsx";
+import OrderDetails from "../Order/OrderDetails/OrderDetails.jsx";
+import PassengersInfo from "./PassengersInfo/PassengersInfo.jsx";
+import Footer from "../Footer/Footer.jsx";
 
 function PassengersPage() {
   return (

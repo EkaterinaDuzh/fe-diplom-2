@@ -1,8 +1,8 @@
 /* eslint-disable-next-line no-unused-vars */
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import PayContext from '../context/payContext';
-import ValidationEmail from '../services/ValidationEmail';
+import PayContext from '../context/payContext.js';
+import ValidationEmail from '../services/ValidationEmail.js';
 import './PaymentInfo.css';
 
 const PaymentInfo = () => {

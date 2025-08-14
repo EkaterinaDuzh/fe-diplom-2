@@ -1,9 +1,9 @@
 /* eslint-disable-next-line no-unused-vars */
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import OrderContext from '../context/orderContext';
-import PassengersInfoBlock from '../PassengersInfoBlock/PassengersInfoBlock';
-import PassengersAddInfoBlock from '../PassengersAddInfoBlock/PassengersAddInfoBlock';
+import OrderContext from '../context/orderContext.js';
+import PassengersInfoBlock from '../PassengersInfoBlock/PassengersInfoBlock.jsx';
+import PassengersAddInfoBlock from '../PassengersAddInfoBlock/PassengersAddInfoBlock.jsx';
 import './PassengersInfo.css';
 
 const calculateTotalPassengers = orderState =>

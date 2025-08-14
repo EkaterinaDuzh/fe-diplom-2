@@ -1,9 +1,9 @@
 /* eslint-disable-next-line no-unused-vars */
 import React, { memo, useContext, useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import AppContext from '../context/appContext';
+import AppContext from '../context/appContext.js';
 import ReactPaginate from 'react-paginate';
-import OrderTrain from '../OrderTrain/OrderTrain';
+import OrderTrain from '../OrderTrain/OrderTrain.jsx';
 import './OrderPagination.css';
 
 function Items({ data }) {

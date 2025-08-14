@@ -1,13 +1,13 @@
 /* eslint-disable-next-line no-unused-vars */
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import OrderContext from '../context/orderContext';
+import OrderContext from '../context/orderContext.js';
 import WagonHeader from '../assets/wagon-header.png';
 import WagonFooter from '../assets/wagon-footer.png';
-import SeatsSchemeFourthClass from './SeatsSchemeFourthClass/SeatsSchemeFourthClass';
-import SeatsSchemeThirdClass from './SeatsSchemeThirdClass/SeatsSchemeThirdClass';
-import SeatsSchemeSecondClass from './SeatsSchemeSecondClass/SeatsSchemeSecondClass';
-import SeatsSchemeFirstClass from './SeatsSchemeFirstClass/SeatsSchemeFirstClass';
+import SeatsSchemeFourthClass from './SeatsSchemeFourthClass/SeatsSchemeFourthClass.jsx';
+import SeatsSchemeThirdClass from './SeatsSchemeThirdClass/SeatsSchemeThirdClass.jsx';
+import SeatsSchemeSecondClass from './SeatsSchemeSecondClass/SeatsSchemeSecondClass.jsx';
+import SeatsSchemeFirstClass from './SeatsSchemeFirstClass/SeatsSchemeFirstClass.jsx';
 import './SeatsScheme.css';
 
 /* eslint-disable-next-line no-unused-vars */

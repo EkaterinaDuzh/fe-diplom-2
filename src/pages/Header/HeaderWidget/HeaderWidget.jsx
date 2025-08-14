@@ -1,10 +1,10 @@
 /* eslint-disable-next-line no-unused-vars */
 import React, { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import AppContext from "../context/appContext";
-import SelectLocation from "../components/Select/SelectLocation";
-import Calendar from "../components/Calendar/Calendar";
-import Modal from "../components/Modal/Modal";
+import AppContext from "../context/appContext.js";
+import SelectLocation from "../components/Select/SelectLocation.jsx";
+import Calendar from "../components/Calendar/Calendar.jsx";
+import Modal from "../components/Modal/Modal.jsx";
 import "./HeaderWidget.css";
 
 function HeaderWidget() {

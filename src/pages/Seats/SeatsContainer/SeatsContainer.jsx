@@ -1,14 +1,14 @@
 /* eslint-disable-next-line no-unused-vars */
 import React, { useContext, useMemo, useState, useEffect } from 'react';
-import AppContext from '../context/appContext';
-import useGetSeats from '../services/useGetSeats';
-import SeatsExchange from '../SeatsExchange/SeatsExchange';
-import SeatsTrain from '../SeatsTrain/SeatsTrain';
-import SeatsTicketAmount from '../SeatsTicketAmount/SeatsTicketAmount';
-import SeatsWagonTypes from '../SeatsWagonTypes/SeatsWagonTypes';
-import SeatsWagonHeader from '../SeatsWagonHeader/SeatsWagonHeader';
-import SeatsWagonDetails from '../SeatsWagonDetails/SeatsWagonDetails';
-import SeatsTotalCost from '../SeatsTotalCost/SeatsTotalCost';
+import AppContext from '../context/appContext.js';
+import useGetSeats from '../services/useGetSeats.js';
+import SeatsExchange from '../SeatsExchange/SeatsExchange.jsx';
+import SeatsTrain from '../SeatsTrain/SeatsTrain.jsx';
+import SeatsTicketAmount from '../SeatsTicketAmount/SeatsTicketAmount.jsx';
+import SeatsWagonTypes from '../SeatsWagonTypes/SeatsWagonTypes.jsx';
+import SeatsWagonHeader from '../SeatsWagonHeader/SeatsWagonHeader.jsx';
+import SeatsWagonDetails from '../SeatsWagonDetails/SeatsWagonDetails.jsx';
+import SeatsTotalCost from '../SeatsTotalCost/SeatsTotalCost.jsx';
 import './SeatsContainer.css';
 
 /* eslint-disable-next-line no-unused-vars */
