@@ -1,6 +1,6 @@
 import { createContext } from "react";
 import { initialOrderState } from "./utils/initialOrderState";
 
-const orderContext = createContext(initialOrderState);
+const OrderContext = createContext(initialOrderState);
 
-export default orderContext;
+export default OrderContext;

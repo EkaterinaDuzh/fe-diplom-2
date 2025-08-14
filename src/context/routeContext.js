@@ -1,6 +1,6 @@
 import { createContext } from "react";
 import { initialRouteState } from "./utils/initialRouteState";
 
-const routeContext = createContext(initialRouteState);
+const RouteContext = createContext(initialRouteState);
 
-export default routeContext;
+export default RouteContext;
