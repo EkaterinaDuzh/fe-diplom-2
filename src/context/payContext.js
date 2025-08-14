@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { initialPayState } from "./utils/initialPayState.js";
+import { initialPayState } from "../utils/initialPayState.js";
 
 const PayContext = createContext(initialPayState);
 

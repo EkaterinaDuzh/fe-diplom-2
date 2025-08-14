@@ -5,7 +5,7 @@ import AppContext from "../context/appContext";
 import RouteContext from "../context/routeContext";
 import OrderContext from "../context/orderContext";
 import PayContext from "../context/payContext";
-import ConfirmTrain from "./ConfirmTrain/ConfirmTrain";
+import ConfirmTrain from "../ConfirmTrain/ConfirmTrain";
 import SVGicon from "../components/SVGicon/SVGicon";
 import Modal from "../components/Modal/Modal";
 import "./ConfirmInfo.css";
