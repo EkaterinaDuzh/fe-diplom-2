@@ -1,6 +1,6 @@
 import { createContext } from "react";
 import { initialAppState } from "./utils/initialAppState";
 
-const AppContext = createContext(initialAppState);
+const appContext = createContext(initialAppState);
 
-export default AppContext;
+export default appContext;

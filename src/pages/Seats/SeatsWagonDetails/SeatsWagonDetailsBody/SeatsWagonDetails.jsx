@@ -1,7 +1,7 @@
 /* eslint-disable-next-line no-unused-vars */
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import RouteContext from '../context/routeContext';
+import routeContext from '../context/routeContext';
 import SeatsWagonDetailsBody from './SeatsWagonDetailsBody/SeatsWagonDetailsBody';
 import SeatsScheme from '../SeatsScheme/SeatsScheme';
 import './SeatsWagonDetails.css';
@@ -23,7 +23,7 @@ const WagonDetails = ({ data, identity, routeState }) => {
 };
 
 const SeatsWagonDetails = ({ data, identity }) => {
-  const { routeState } = useContext(RouteContext);
+  const { routeState } = useContext(routeContext);
 
   return <WagonDetails data={data} identity={identity} routeState={routeState} />;
 };

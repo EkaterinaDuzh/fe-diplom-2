@@ -1,6 +1,6 @@
 /* eslint-disable-next-line no-unused-vars */
 import React, { useContext, useState, useEffect } from "react";
-import AppContext from "../context/appContext";
+import AppContext from ".//context/appContext";
 import { switchFilters } from "../utils/switchFilters";
 import SVGicon from "../components/SVGicon/SVGicon";
 import Calendar from "../components/Calendar/Calendar";

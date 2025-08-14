@@ -63,23 +63,23 @@ function ConfirmInfo() {
   };
 
   return (
-    <div className="confirm-info__wrapper">
-      <div className="confirm-info__block confirm-info__train-block">
-        <p className="confirm-info__block-title">Поезд</p>
+    <div className="conf-info__wrapper">
+      <div className="conf-info__block conf-info__train-block">
+        <p className="conf-info__block-title">Поезд</p>
         <ConfirmTrain />
       </div>
 
-      <div className="confirm-info__block confirm-info__passengers-block">
-        <p className="confirm-info__block-title">Пассажиры</p>
-        <div className="confirm-info__passengers-container">
-          <div className="confirm-info__passengers-wrapper">
+      <div className="conf-info__block conf-info__passengers-block">
+        <p className="conf-info__block-title">Пассажиры</p>
+        <div className="conf-info__passengers-container">
+          <div className="conf-info__passengers-wrapper">
             {combinedSeats.map((item, index) => (
-              <div className="confirm-info__passenger" key={index}>
-                <div className="confirm-info__passenger-logo">
+              <div className="conf-info__passenger" key={index}>
+                <div className="conf-info__passenger-logo">
                   <SVGicon name={"person-in-circle"} />
                   <p>{item.person_info.is_adult ? "Взрослый" : "Детский"}</p>
                 </div>
-                <div className="confirm-info__passenger-info">
+                <div className="conf-info__passenger-info">
                   <p>{`${item.person_info.last_name} ${item.person_info.first_name} ${item.person_info.patronymic}`}</p>
                   <p>{item.person_info.gender ? "Пол мужской" : "Пол женский"}</p>
                   <p>{`Дата рождения ${item.person_info.birthday}`}</p>
@@ -88,32 +88,32 @@ function ConfirmInfo() {
               </div>
             ))}
           </div>
-          <div className="confirm-info__cost-wrapper">
-            <div className="confirm-info__total-cost">
+          <div className="conf-info__cost-wrapper">
+            <div className="conf-info__total-cost">
               <p>Всего:</p>
               <p>
-                <span className="confirm-info__cost">{totalCost}</span>₽
+                <span className="conf-info__cost">{totalCost}</span>₽
               </p>
             </div>
-            <button className="confirm-info__btn" type="button">
+            <button className="conf-info__btn" type="button">
               Изменить
             </button>
           </div>
         </div>
       </div>
 
-      <div className="confirm-info__block confirm-info__payment-block">
-        <p className="confirm-info__block-title">Способ оплаты</p>
-        <div className="confirm-info__payment-wrapper">
-          <p className="confirm-info__payment-method">{payState.user.payment_method === "online" ? "Онлайн" : "Наличными"}</p>
-          <button className="confirm-info__btn" type="button">
+      <div className="conf-info__block conf-info__payment-block">
+        <p className="conf-info__block-title">Способ оплаты</p>
+        <div className="conf-info__payment-wrapper">
+          <p className="conf-info__payment-method">{payState.user.payment_method === "online" ? "Онлайн" : "Наличными"}</p>
+          <button className="conf-info__btn" type="button">
             Изменить
           </button>
         </div>
       </div>
 
-      <div className="confirm-info__ok-btn-wrapper">
-        <button className="confirm-info__ok-btn" type="button" onClick={handleSubmit}>
+      <div className="conf-info__ok-btn-wrapper">
+        <button className="conf-info__ok-btn" type="button" onClick={handleSubmit}>
           подтвердить
         </button>
       </div>

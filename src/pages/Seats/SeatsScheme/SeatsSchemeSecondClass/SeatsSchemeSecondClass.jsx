@@ -45,7 +45,7 @@ function SeatsSchemeSecondClass({ seats, onChange }) {
     return foundSeat && foundSeat.available;
   };
 
-  const handleSeatSelection = (seatNumber) => {
+  const handleSeatSelection = (seatNumber, event) => {
     const targetContainer = event.currentTarget.closest(".seats__container");
     const isDeparture = targetContainer.dataset.name === "departure";
 

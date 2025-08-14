@@ -1,7 +1,7 @@
 /* eslint-disable-next-line no-unused-vars */
 import React, { useState, useContext } from "react";
 import PropTypes from "prop-types";
-import OrderContext from "../context/orderContext";
+import orderContext from "../context/orderContext";
 import PayContext from "../context/payContext";
 import "./PassengersInfoBlock.css";
 
@@ -9,7 +9,7 @@ import "./PassengersInfoBlock.css";
 const PassengersInfoBlock = ({ number, onChange }) => {
 /* eslint-disable-next-line no-unused-vars */
     const { payState, setPayState } = useContext(PayContext);
-    const { orderState } = useContext(OrderContext);
+    const { orderState } = useContext(orderContext);
     
     const depAdultCount = Number(orderState.departure_person_count.adult);
     const depChildCount = Number(orderState.departure_person_count.child);
