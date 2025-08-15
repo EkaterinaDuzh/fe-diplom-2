@@ -27,7 +27,7 @@ function PassengersInfo() {
 
   const handleNextStep = event => {
     event.preventDefault();
-    navigate('/fe-diploma/order/payment');
+    navigate('/fe-diplom/order/payment');
   };
 
   return (

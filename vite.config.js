@@ -4,7 +4,7 @@ import react from "@vitejs/plugin-react";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/fe_diplom-2/",
+  base: "/fe-diplom_2/",
   server: {
     open: true,
   },
