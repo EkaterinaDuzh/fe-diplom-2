@@ -1,7 +1,7 @@
 /* eslint-disable-next-line no-unused-vars */
 import React, { useContext } from "react";
-import RouteContext from "../context/routeContext.js";
-import SVGicon from "../components/SVGicon/SVGicon.jsx";
+import RouteContext from "../../../context/routeContext.js";
+import SVGicon from "../../../components/SVGicon/SVGicon.jsx";
 import "./ConfirmTrain.css";
 
 function ConfirmTrain() {

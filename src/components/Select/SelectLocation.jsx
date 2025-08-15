@@ -2,7 +2,7 @@
 import React, { useState, useCallback, useMemo } from "react";
 import PropTypes from "prop-types";
 import { Select } from "antd";
-import useGetCities from "./services/useGetCities";
+import useGetCities from "./../../services/useGetCities";
 import "./SelectLocation.css";
 
 function SelectLocation({ name, placeholder, onValue }) {

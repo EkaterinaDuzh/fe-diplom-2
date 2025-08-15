@@ -1,7 +1,7 @@
 /* eslint-disable-next-line no-unused-vars */
 import React from "react";
-import TrainImage from "./assets/train.png";
-import LineImage from "./assets/line.png";
+import TrainImage from "./img/train.png";
+import LineImage from "./img/line.png";
 import "./Load.css";
 
 function Load() {

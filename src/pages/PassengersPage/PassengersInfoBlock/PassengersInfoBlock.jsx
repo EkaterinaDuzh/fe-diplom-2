@@ -1,8 +1,8 @@
 /* eslint-disable-next-line no-unused-vars */
 import React, { useState, useContext } from "react";
 import PropTypes from "prop-types";
-import orderContext from "../context/orderContext.js";
-import PayContext from "../context/payContext.js";
+import orderContext from "../../../context/orderContext.js";
+import PayContext from "../../../context/payContext.js";
 import "./PassengersInfoBlock.css";
 
 /* eslint-disable-next-line no-unused-vars */

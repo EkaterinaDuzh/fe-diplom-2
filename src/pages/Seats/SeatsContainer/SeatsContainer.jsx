@@ -1,7 +1,7 @@
 /* eslint-disable-next-line no-unused-vars */
 import React, { useContext, useMemo, useState, useEffect } from 'react';
-import AppContext from '../context/appContext.js';
-import useGetSeats from '../services/useGetSeats.js';
+import AppContext from '../../../context/appContext.js';
+import useGetSeats from '../../../services/useGetSeats.js';
 import SeatsExchange from '../SeatsExchange/SeatsExchange.jsx';
 import SeatsTrain from '../SeatsTrain/SeatsTrain.jsx';
 import SeatsTicketAmount from '../SeatsTicketAmount/SeatsTicketAmount.jsx';

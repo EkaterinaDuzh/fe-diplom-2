@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { socials } from "../../../utils/socials.js";
-import ValidationEmail from "../../../services/ValidationEmail.jsx";
+import ValidationEmail from "../../../services/ValidationEmail.js";
 import Modal from "../../../components/Modal/Modal.jsx";
 import "./FooterSubscribe.css";
 

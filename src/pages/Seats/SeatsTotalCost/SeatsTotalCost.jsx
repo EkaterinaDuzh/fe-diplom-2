@@ -1,7 +1,7 @@
 /* eslint-disable-next-line no-unused-vars */
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import OrderContext from '../context/orderContext.js';
+import OrderContext from '../../../context/orderContext.js';
 import './SeatsTotalCost.css';
 
 const calculateTotalCost = ({ seats, services }) =>
