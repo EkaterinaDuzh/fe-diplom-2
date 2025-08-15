@@ -1,4 +1,4 @@
-import useAPI from "#services/useAPI";
+import useAPI from "../services/useAPI";
 
 export default function useGetRoutes({ ...rest }) {
   const params = [];

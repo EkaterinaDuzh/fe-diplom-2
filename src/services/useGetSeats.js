@@ -1,4 +1,4 @@
-import useAPI from '#services/useAPI';
+import useAPI from '../services/useAPI';
 
 export default function useGetSeats({
   departure_id,
