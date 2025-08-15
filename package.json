@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "description": "",
-  "homepage": "https://github.com/EkaterinaDuzh/fe-diplom_2#readme",
+  "homepage": "https://ekaterinaduzh.github.io/fe-diplom_2/",
   "bugs": {
     "url": "https://github.com/EkaterinaDuzh/fe-diplom_2/issues"
   },
@@ -16,7 +16,7 @@
   "main": "main.jsx",
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+    "deploy": "gh-pages -d build",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
