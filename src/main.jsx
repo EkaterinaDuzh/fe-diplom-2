@@ -9,7 +9,7 @@ if (!rootElement) {
   throw new Error('No root element found!');
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(rootElement); // ← Используем уже найденный элемент
 root.render(
   <React.StrictMode>
     <BrowserRouter basename="/fe-diplom_2">
