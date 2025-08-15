@@ -5,7 +5,7 @@ import HeaderNav from '../HeaderNav/HeaderNav.jsx';
 import HeaderTitle from '../HeaderTitle/HeaderTitle.jsx';
 import HeaderWidget from '../HeaderWidget/HeaderWidget.jsx';
 import HeaderProgressBar from '../HeaderProgressBar/HeaderProgressBar.jsx';
-import bgImage from '../assets/header-base-image.png';
+import bgImage from './img/header-base-image.png';
 import './HeaderStart.css';
 
 function HeaderStart() {

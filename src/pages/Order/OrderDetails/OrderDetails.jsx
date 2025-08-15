@@ -1,11 +1,11 @@
 /* eslint-disable-next-line no-unused-vars */
 import React, { useContext } from "react";
-import AppContext from "../context/appContext.js";
-import RouteContext from "../context/routeContext.js";
-import OrderContext from "../context/orderContext.js";
-import ArrivalImage from "../assets/slider-filter-period-arrival.png";
-import DepartureImage from "../assets/slider-filter-period-departure.png";
-import PassengersImage from "../assets/order-sidebar-passengers-icon.png";
+import AppContext from "../../../context/appContext.js";
+import RouteContext from "../../../context/routeContext.js";
+import OrderContext from "../../../context/orderContext.js";
+import ArrivalImage from "./img/slider-filter-period-arrival.png";
+import DepartureImage from "./img/slider-filter-period-departure.png";
+import PassengersImage from "./img/order-sidebar-passengers-icon.png";
 import "./OrderDetails.css";
 
 const calculateTotalCost = ({

@@ -2,7 +2,7 @@
 import React from "react";
 import HeaderLogo from "../HeaderLogo/HeaderLogo.jsx";
 import HeaderNav from "../HeaderNav/HeaderNav.jsx";
-import bgImage from "../assets/header-final-image.png";
+import bgImage from "./img/header-final-image.png";
 import "./HeaderFinish.css";
 
 function HeaderFinish() {

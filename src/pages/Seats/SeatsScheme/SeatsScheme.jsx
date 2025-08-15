@@ -2,8 +2,8 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import OrderContext from '../context/orderContext.js';
-import WagonHeader from '../assets/wagon-header.png';
-import WagonFooter from '../assets/wagon-footer.png';
+import WagonHeader from './img/wagon-header.png';
+import WagonFooter from './img/wagon-footer.png';
 import SeatsSchemeFourthClass from './SeatsSchemeFourthClass/SeatsSchemeFourthClass.jsx';
 import SeatsSchemeThirdClass from './SeatsSchemeThirdClass/SeatsSchemeThirdClass.jsx';
 import SeatsSchemeSecondClass from './SeatsSchemeSecondClass/SeatsSchemeSecondClass.jsx';

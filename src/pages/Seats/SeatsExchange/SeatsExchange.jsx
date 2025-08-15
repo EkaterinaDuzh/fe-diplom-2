@@ -2,8 +2,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
-import ArrivalImage from '../assets/slider-filter-period-arrival.png';
-import DepartureImage from '../assets/slider-filter-period-departure.png';
+import ArrivalImage from './img/slider-filter-period-arrival.png';
+import DepartureImage from './img/slider-filter-period-departure.png';
 import './SeatsExchange.css';
 
 const SeatsExchange = ({ data }) => {
