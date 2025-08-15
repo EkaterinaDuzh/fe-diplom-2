@@ -1,6 +1,6 @@
 /* eslint-disable-next-line no-unused-vars */
 import React, { useState } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import AppContext from './context/appContext.js';
 import RouteContext from './context/routeContext.js';
@@ -28,21 +28,26 @@ function App() {
   const [orderState, setOrderState] = useState(initialOrderState);
   const [payState, setPayState] = useState(initialPayState);
 
+  // Определите базовый путь для вашего репозитория
+  const basename = '/fe-diplom_2';
+
   return (
     <div className="app">
       <AppContext.Provider value={{ appState, setAppState }}>
         <RouteContext.Provider value={{ routeState, setRouteState }}>
           <OrderContext.Provider value={{ orderState, setOrderState }}>
             <PayContext.Provider value={{ payState, setPayState }}>
-              <Routes>
-                <Route path="/fe-diplom_2" element={<StartPage />} />
-                <Route path="/fe-diplom_2/order" element={<OrderPage />} />
-                <Route path="/fe-diplom_2/order/seats" element={<SeatsPage />} />
-                <Route path="/fe-diplom_2/order/passengers" element={<PassengersPage />} />
-                <Route path="/fe-diplom_2/order/payment" element={<PaymentPage />} />
-                <Route path="/fe-diplom_2/order/confirm" element={<ConfirmPage />} />
-                <Route path="/fe-diplom_2/finish" element={<FinishPage />} />
-              </Routes>
+              <Router basename={basename}>
+                <Routes>
+                  <Route path="/" element={<StartPage />} />
+                  <Route path="/order" element={<OrderPage />} />
+                  <Route path="/order/seats" element={<SeatsPage />} />
+                  <Route path="/order/passengers" element={<PassengersPage />} />
+                  <Route path="/order/payment" element={<PaymentPage />} />
+                  <Route path="/order/confirm" element={<ConfirmPage />} />
+                  <Route path="/finish" element={<FinishPage />} />
+                </Routes>
+              </Router>
             </PayContext.Provider>
           </OrderContext.Provider>
         </RouteContext.Provider>
