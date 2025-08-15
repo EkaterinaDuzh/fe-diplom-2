@@ -6,15 +6,16 @@ import path from 'path';
 export default defineConfig({
   plugins: [react()],
   resolve: {
-    alias: {
-      '#services': path.resolve(__dirname, './src/services'),
   base: "/fe-diplom_2/",
     },
-  },
   server: {
     open: true,
   },
   build: {
-    chunkSizeWarningLimit: 1000, 
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html'),
+      },
+    }, 
   },
 });
