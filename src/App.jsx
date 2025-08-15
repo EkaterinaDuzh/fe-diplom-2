@@ -1,6 +1,6 @@
 /* eslint-disable-next-line no-unused-vars */
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import AppContext from './context/appContext.js';
 import RouteContext from './context/routeContext.js';
@@ -28,8 +28,6 @@ function App() {
   const [orderState, setOrderState] = useState(initialOrderState);
   const [payState, setPayState] = useState(initialPayState);
 
-  // Определите базовый путь для вашего репозитория
-  const basename = '/fe-diplom_2';
 
   return (
     <div className="app">
@@ -37,7 +35,6 @@ function App() {
         <RouteContext.Provider value={{ routeState, setRouteState }}>
           <OrderContext.Provider value={{ orderState, setOrderState }}>
             <PayContext.Provider value={{ payState, setPayState }}>
-              <Router basename={basename}>
                 <Routes>
                   <Route path="/" element={<StartPage />} />
                   <Route path="/order" element={<OrderPage />} />
@@ -47,7 +44,6 @@ function App() {
                   <Route path="/order/confirm" element={<ConfirmPage />} />
                   <Route path="/finish" element={<FinishPage />} />
                 </Routes>
-              </Router>
             </PayContext.Provider>
           </OrderContext.Provider>
         </RouteContext.Provider>

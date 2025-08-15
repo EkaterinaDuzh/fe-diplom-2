@@ -9,12 +9,10 @@ if (!rootElement) {
   throw new Error('No root element found!');
 }
 
-const basename = '/fe-diplom_2';
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename={basename}>
+    <BrowserRouter basename="/fe-diplom_2">
       <App />
     </BrowserRouter>
   </React.StrictMode>
