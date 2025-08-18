@@ -10,7 +10,11 @@ function SelectLocation({ name, placeholder, onValue }) {
   const { result } = useGetCities(input);
 
   const cachedOptions = useMemo(() => {
-    return Array.from(result).map((item) => ({
+    if (!result) return [];
+    
+    const arrayResult = Array.isArray(result) ? result : Array.from(result || []);
+    
+    return arrayResult.map((item) => ({
       value: item._id,
       label: item.name.toUpperCase(),
     }));
@@ -18,6 +22,8 @@ function SelectLocation({ name, placeholder, onValue }) {
 
   const handleChange = useCallback(
     (value) => {
+      if (!result) return;
+      
       const selectedCity = result.find((city) => city._id === value);
       if (!selectedCity) return;
 
