@@ -15,12 +15,13 @@
   "type": "module",
   "main": "main.jsx",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "dev": "vite",
-    "build": "vite build",
+    "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "lint:fix": "eslint . --fix",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "air-datepicker": "^3.6.0",
@@ -38,6 +39,7 @@
     "react-router-hash-link": "^2.4.3",
     "react-tooltip": "^5.29.1",
     "swiper": "^11.2.10",
+    "typescript-eslint": "^8.39.1",
     "validator": "^13.15.15"
   },
   "devDependencies": {
