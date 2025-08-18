@@ -10,16 +10,16 @@ function HeaderNav() {
         <nav className="header-nav__nav nav">
           <ul className="nav__list">
             <li className="nav__item">
-              <HashLink to="/fe-diplom/#about" className="nav__link">О нас</HashLink>
+              <HashLink to="/#about" data-discover="true" className="nav__link">О нас</HashLink>
             </li>
             <li className="nav__item">
-              <HashLink to="/fe-diplom/#work" className="nav__link">Как это работает</HashLink>
+              <HashLink to="/#work" data-discover="true" className="nav__link">Как это работает</HashLink>
             </li>
             <li className="nav__item">
-              <HashLink to="/fe-diplom/#feedback" className="nav__link">Отзывы</HashLink>
+              <HashLink to="/#feedback" data-discover="true" className="nav__link">Отзывы</HashLink>
             </li>
             <li className="nav__item">
-              <HashLink to="/fe-diplom/#contacts" className="nav__link">Контакты</HashLink>
+              <HashLink to="/#contacts" data-discover="true" className="nav__link">Контакты</HashLink>
             </li>
           </ul>
         </nav>

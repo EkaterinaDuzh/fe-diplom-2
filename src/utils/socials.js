@@ -1,27 +1,33 @@
+import social1 from "../assets/footer-social-icon-youtube.png";
+import social2 from "../assets/footer-social-icon-linkedin.png";
+import social3 from "../assets/footer-social-icon-google.png";
+import social4 from "../assets/footer-social-icon-facebook.png";
+import social5 from "../assets/footer-social-icon-twitter.png";
+
 export const socials = [
   {
     href: "https://www.youtube.com/",
-    src: "#assets/footer-social-icon-youtube.png",
+    src: social1,
     alt: "Youtube",
   },
   {
     href: "https://ru.linkedin.com/",
-    src: "#assets/footer-social-icon-linkedin.png",
+    src: social2,
     alt: "Linkedin",
   },
   {
     href: "https://plus.google.com/",
-    src: "#assets/footer-social-icon-google.png",
+    src: social3,
     alt: "GooglePlus",
   },
   {
     href: "https://www.facebook.com/",
-    src: "#assets/footer-social-icon-facebook.png",
+    src: social4,
     alt: "Facebook",
   },
   {
     href: "https://twitter.com/",
-    src: "#assets/footer-social-icon-twitter.png",
+    src: social5,
     alt: "Twitter",
   },
 ];
