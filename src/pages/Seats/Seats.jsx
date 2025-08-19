@@ -18,7 +18,7 @@ const Seats = () => {
 
   const handleClick = (event) => {
     event.preventDefault();
-    navigate('/order/passengers');
+    navigate('/fe-diplom_2/order/passengers');
   };
 
   const isButtonDisabled = () => {

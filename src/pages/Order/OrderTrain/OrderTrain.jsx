@@ -53,7 +53,7 @@ function OrderTrain({ item }) {
   const handleClick = (e) => {
     e.preventDefault();
     updateContexts();
-    navigate("/order/seats");
+    navigate("/fe-diplom_2/order/seats");
   };
 
   const openSeats = (e) => {

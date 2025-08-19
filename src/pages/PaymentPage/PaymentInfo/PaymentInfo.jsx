@@ -30,7 +30,7 @@ const PaymentInfo = () => {
 
     if (validateForm(formData)) {
       setPayState({...payState, user: {...formData}});
-      navigate('/order/confirm');
+      navigate('/fe-diplom_2/order/confirm');
     }
   };
 
