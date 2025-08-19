@@ -8,7 +8,17 @@
     <meta name="description" content="Web site created using create-react-app"/>
     <link rel="apple-touch-icon" href="/fe-diplom_2/favicon.png"/>
     <title>Система бронирования ж/д билетов</title>
-  <script type="module" crossorigin src="/fe-diplom_2/assets/index-iX1Wfzk3.js"></script>
+    <script type="text/javascript">
+      (function(l) {
+        if (l.hash && l.hash.indexOf('#/') === 0) {
+          var pathFromHash = l.hash.slice(1);
+          if (history.replaceState) {
+             history.replaceState(null, null, pathFromHash + (l.search ? l.search : ''));
+          }
+        }
+      })(window.location);
+    </script>
+  <script type="module" crossorigin src="/fe-diplom_2/assets/index-Ba_3YY9n.js"></script>
   <link rel="modulepreload" crossorigin href="/fe-diplom_2/assets/vendor-CZm-2XbJ.js">
   <link rel="modulepreload" crossorigin href="/fe-diplom_2/assets/ui-DpCAnpB2.js">
   <link rel="modulepreload" crossorigin href="/fe-diplom_2/assets/utils-CHGAWVA4.js">
@@ -16,23 +26,5 @@
 </head>
 <body>
     <div id="root"></div>
-    <script type="text/javascript">
-  (function(l) {
-    if (l.search) {
-      var q = {};
-      l.search.slice(1).split('&').forEach(function(v) {
-        var a = v.split('=');
-        q[a[0]] = a.slice(1).join('=').replace(/~and~/g, '&');
-      });
-      if (q.p !== undefined) {
-        window.history.replaceState(null, null,
-          l.pathname.slice(0, -1) + (q.p || '') +
-          (q.q ? ('?' + q.q) : '') +
-          l.hash
-        );
-      }
-    }
-  }(window.location))
-</script>
 </body>
 </html>
