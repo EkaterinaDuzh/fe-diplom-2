@@ -19,7 +19,7 @@ function HeaderWidget() {
     if (!selectValue.from_city_name || !selectValue.to_city_name) {
       setModalOpen(true);
     } else {
-      navigate("/fe-diplom_2/order");
+      navigate("/fe-diplom/order");
     }
   };
 

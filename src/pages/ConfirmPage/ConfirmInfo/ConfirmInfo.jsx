@@ -53,7 +53,7 @@ function ConfirmInfo() {
         setModal("none");
         setAppState({});
         setRouteState({});
-        navigate("/fe-diplom_2/finish");
+        navigate("/fe-diplom/finish");
       }, 1500);
     } catch (e) {
       console.error("Ошибка:", e.message);
