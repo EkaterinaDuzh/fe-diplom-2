@@ -10,7 +10,7 @@ const SeatsExchange = ({ data }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate('/fe-diplom/order');
+    navigate('/order');
   };
 
   return (

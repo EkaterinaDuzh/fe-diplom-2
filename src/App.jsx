@@ -38,11 +38,11 @@ function App() {
                 <Routes>
                   <Route path="/" element={<StartPage />} />
                   <Route path="/order" element={<OrderPage />} />
-                  <Route path="/order/seats" element={<SeatsPage />} />
-                  <Route path="/order/passengers" element={<PassengersPage />} />
-                  <Route path="/order/payment" element={<PaymentPage />} />
-                  <Route path="/order/confirm" element={<ConfirmPage />} />
-                  <Route path="/finish" element={<FinishPage />} />
+                  <Route path="order/seats" element={<SeatsPage />} />
+                  <Route path="order/passengers" element={<PassengersPage />} />
+                  <Route path="order/payment" element={<PaymentPage />} />
+                  <Route path="order/confirm" element={<ConfirmPage />} />
+                  <Route path="order/finish" element={<FinishPage />} />
                 </Routes>
             </PayContext.Provider>
           </OrderContext.Provider>

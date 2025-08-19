@@ -63,7 +63,7 @@ function FinishInfo() {
 
   const handleClick = (e) => {
     e.preventDefault();
-    navigate('/fe-diplom');
+    navigate('/');
   };
 
   return (
