@@ -12,7 +12,7 @@ if (!rootElement) {
 const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename="/">
+    <BrowserRouter>
       <App />
     </BrowserRouter>
   </React.StrictMode>

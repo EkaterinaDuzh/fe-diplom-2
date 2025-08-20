@@ -37,12 +37,12 @@ function App() {
             <PayContext.Provider value={{ payState, setPayState }}>
                 <Routes>
                   <Route path="/" element={<StartPage />} />
-                  <Route path="/order" element={<OrderPage />} />
-                  <Route path="/order/seats" element={<SeatsPage />} />
-                  <Route path="/order/passengers" element={<PassengersPage />} />
-                  <Route path="/order/payment" element={<PaymentPage />} />
-                  <Route path="/order/confirm" element={<ConfirmPage />} />
-                  <Route path="/order/finish" element={<FinishPage />} />
+                  <Route path="/fe-diplom/order" element={<OrderPage />} />
+                  <Route path="/fe-diplom/order/seats" element={<SeatsPage />} />
+                  <Route path="/fe-diplom/order/passengers" element={<PassengersPage />} />
+                  <Route path="/fe-diplom/order/payment" element={<PaymentPage />} />
+                  <Route path="/fe-diplom/order/confirm" element={<ConfirmPage />} />
+                  <Route path="/fe-diplom/order/finish" element={<FinishPage />} />
                 </Routes>
             </PayContext.Provider>
           </OrderContext.Provider>
