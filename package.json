@@ -1,15 +1,15 @@
 {
-  "name": "fe-diplom_2",
+  "name": "fe-diplom",
   "version": "0.0.0",
   "private": true,
   "description": "",
-  "homepage": "https://github.com/EkaterinaDuzh/fe-diplom_2/",
+  "homepage": "https://github.com/EkaterinaDuzh/fe-diplom/",
   "bugs": {
-    "url": "https://github.com/EkaterinaDuzh/fe-diplom_2/issues"
+    "url": "https://github.com/EkaterinaDuzh/fe-diplom/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EkaterinaDuzh/fe-diplom_2.git"
+    "url": "git+https://github.com/EkaterinaDuzh/fe-diplom.git"
   },
   "license": "ISC",
   "type": "module",
