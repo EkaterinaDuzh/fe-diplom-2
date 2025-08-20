@@ -27,10 +27,10 @@ function OrderTrain({ item }) {
     const newRouteState = { ...routeState };
     const newOrderState = { ...orderState };
     
-    for (let key in ["departure", "arrival"]) {
+    ["departure", "arrival"].forEach(key => {
       let currentItem = item[key];
       
-      if (!currentItem) continue;
+      if (!currentItem) return;
       
       newAppState[key + "_id"] = currentItem._id;
       newRouteState[key + "_train_name"] = currentItem.train.name;
@@ -43,7 +43,7 @@ function OrderTrain({ item }) {
       newRouteState[key + "_duration"] = getTime(currentItem.duration);
       
       newOrderState[key].route_direction_id = currentItem._id;
-    }
+    });
 
     setAppState(newAppState);
     setRouteState(newRouteState);
@@ -58,7 +58,7 @@ function OrderTrain({ item }) {
 
   const openSeats = (e) => {
     e.preventDefault();
-    if (e.target.nextElementSibling.className.includes("train__price-seat-up-down")) {
+    if (e.target.nextElementSibling && e.target.nextElementSibling.className.includes("train__price-seat-up-down")) {
       e.target.nextElementSibling.classList.toggle("train__price-seat-up-down-open");
     }
   };
@@ -75,13 +75,13 @@ function OrderTrain({ item }) {
           if (!currentItem) return null;
           
           return (
-            <>
+            <React.Fragment key={`${key}_fragment`}>
               <p className="train__name-number" key={`${key}_number`}>{currentItem.train.name}</p>
               <div className="train__name-place" key={`${key}_place`}>
                 <p className="train__name-city">{currentItem.from.city.name}</p>
                 <p className="train__name-city">{currentItem.to.city.name}</p>
               </div>
-            </>
+            </React.Fragment>
           );
         })}
       </div>
@@ -93,7 +93,7 @@ function OrderTrain({ item }) {
           if (!currentItem) return null;
           
           return (
-            <div className={`train__time-${key}`} key={currentItem._id}>
+            <div className={`train__time-${key}`} key={`${key}_${currentItem._id}`}>
               <div>
                 <time dateTime="2001-05-15 19:00">{getTime(currentItem.from.datetime)}</time>
                 <p>{currentItem.from.city.name}</p>
@@ -116,23 +116,23 @@ function OrderTrain({ item }) {
       <div className="train__price-wrapper" style={{ height: item.arrival ? "360px" : "350px" }}>
         <div className="train__price-seats">
           {Object.keys(SEAT_TYPES).map(seatType => {
-            const availableSeatsInfo = item.departure.available_seats_info[seatType];
+            const availableSeatsInfo = item.departure?.available_seats_info?.[seatType];
             
             if (!availableSeatsInfo) return null;
             
             return (
-              <div className="train__price-seat" key={seatType}>
+              <div className="train__price-seat" key={`seat_${seatType}`}>
                 <p className="train__price-seat-type">{SEAT_TYPES[seatType]}</p>
                 <p className="train__price-seat-count" onClick={openSeats}>{availableSeatsInfo}</p>
                 
                 <div className="train__price-seat-up-down">
                   {["top", "bottom", "side"].filter(priceKey => seatType !== "first" || priceKey === "bottom").map(priceKey => {
-                    const price = item.departure.price_info[seatType][priceKey + "_price"];
+                    const price = item.departure?.price_info?.[seatType]?.[priceKey + "_price"];
                     
                     if (!price) return null;
                     
                     return (
-                      <div className={`train__price-seat-${priceKey}`} key={`${seatType}-${priceKey}`}>
+                      <div className={`train__price-seat-${priceKey}`} key={`price_${seatType}_${priceKey}`}>
                         <p className={`train__price-seat-${priceKey}-type`}>{priceKey === "side" ? "боковые" : `${priceKey === "top" ? "верхние" : "нижние"}`}</p>
                         <p><span className={`train__price-seat-${priceKey}-sum`}>{price}</span>₽</p>
                       </div>
@@ -140,16 +140,16 @@ function OrderTrain({ item }) {
                   })}
                 </div>
                 
-                <p>от<span className="train__price-seat-sum">{item.departure.price_info[seatType].top_price}</span>₽</p>
+                <p>от<span className="train__price-seat-sum">{item.departure?.price_info?.[seatType]?.top_price || 0}</span>₽</p>
               </div>
             );
           })}
         </div>
 
         <div className="train__price-icons">
-          {item.departure.have_air_conditioning && <SVGicon name={"have_air_conditioning"} />}
-          {item.departure.have_wifi && <SVGicon name={"have_wifi"} />}
-          {item.departure.is_express && <SVGicon name={"is_express"} />}
+          {item.departure?.have_air_conditioning && <SVGicon name={"have_air_conditioning"} key="air_conditioning" />}
+          {item.departure?.have_wifi && <SVGicon name={"have_wifi"} key="wifi" />}
+          {item.departure?.is_express && <SVGicon name={"is_express"} key="express" />}
         </div>
         <button className="train__price-button" type="button" onClick={handleClick}>Выбрать места</button>
       </div>
@@ -157,8 +157,8 @@ function OrderTrain({ item }) {
   );
 }
 
-export default OrderTrain;
-
 OrderTrain.propTypes = {
   item: PropTypes.object,
 };
+
+export default OrderTrain;

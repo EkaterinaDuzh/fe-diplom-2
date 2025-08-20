@@ -1,5 +1,5 @@
 /* eslint-disable-next-line no-unused-vars */
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useRef } from "react";
 import PropTypes from "prop-types";
 import AppContext from "../../../context/appContext.js";
 import "./OrderResultsControl.css";
@@ -9,13 +9,22 @@ const OrderResultsControl = ({ count }) => {
   const { appState, setAppState } = useContext(AppContext);
   const [option, setOption] = useState({ dataValue: "date", value: "времени" });
   const [view, setView] = useState({ dataValue: "5", value: "5" });
+  const [isSortOpen, setIsSortOpen] = useState(false);
+  const selectButtonRef = useRef(null);
 
   const handleSortSelect = (value) => {
-    setOption({ dataValue: value, value });
+    const valueMap = {
+      "date": "времени",
+      "price": "стоимости",
+      "duration": "длительности"
+    };
+    
+    setOption({ dataValue: value, value: valueMap[value] || value });
     setAppState((prevState) => ({
       ...prevState,
       sort: value,
     }));
+    setIsSortOpen(false);
   };
 
   const handleViewChange = (newValue) => {
@@ -26,6 +35,25 @@ const OrderResultsControl = ({ count }) => {
     }));
   };
 
+  const toggleSortDropdown = () => {
+    setIsSortOpen(!isSortOpen);
+  };
+
+  const handleDropdownClickOutside = (e) => {
+    if (selectButtonRef.current && !selectButtonRef.current.contains(e.target)) {
+      setIsSortOpen(false);
+    }
+  };
+
+  React.useEffect(() => {
+    if (isSortOpen) {
+      document.addEventListener('click', handleDropdownClickOutside);
+    }
+    return () => {
+      document.removeEventListener('click', handleDropdownClickOutside);
+    };
+  }, [isSortOpen]);
+
   return (
     <div className="order-results__control result-control">
       <p>найдено: <span className="result-control__find-value">{count}</span></p>
@@ -34,25 +62,51 @@ const OrderResultsControl = ({ count }) => {
         <p>сортировать по: </p>
         <div className="result-control__select">
           <button
+            ref={selectButtonRef}
             className="result-control__select-btn"
             type="button"
             data-value={option.dataValue}
-            value={option.value}
-            aria-expanded="false"
+            aria-expanded={isSortOpen}
             aria-controls="sort-options"
-            onClick={(e) =>
-              e.currentTarget.setAttribute(
-                'aria-expanded',
-                !JSON.parse(e.currentTarget.getAttribute('aria-expanded'))
-              )
-            }
+            onClick={toggleSortDropdown}
           >
             {option.value}
           </button>
-          <ul id="sort-options" role="listbox" className={`result-control__options ${!JSON.parse(document.querySelector('.result-control__select-btn').getAttribute('aria-expanded')) ? '' : 'result-control__options-visible'}`}>
-            <li><button className="result-control__option" type="button" data-value="date" value="времени" onClick={() => handleSortSelect("date")}>По времени</button></li>
-            <li><button className="result-control__option" type="button" data-value="price" value="стоимости" onClick={() => handleSortSelect("price")}>По стоимости</button></li>
-            <li><button className="result-control__option" type="button" data-value="duration" value="длительности" onClick={() => handleSortSelect("duration")}>По длительности</button></li>
+          <ul 
+            id="sort-options" 
+            role="listbox" 
+            className={`result-control__options ${isSortOpen ? 'result-control__options-visible' : ''}`}
+          >
+            <li>
+              <button 
+                className="result-control__option" 
+                type="button" 
+                data-value="date" 
+                onClick={() => handleSortSelect("date")}
+              >
+                По времени
+              </button>
+            </li>
+            <li>
+              <button 
+                className="result-control__option" 
+                type="button" 
+                data-value="price" 
+                onClick={() => handleSortSelect("price")}
+              >
+                По стоимости
+              </button>
+            </li>
+            <li>
+              <button 
+                className="result-control__option" 
+                type="button" 
+                data-value="duration" 
+                onClick={() => handleSortSelect("duration")}
+              >
+                По длительности
+              </button>
+            </li>
           </ul>
         </div>
       </div>
@@ -60,14 +114,16 @@ const OrderResultsControl = ({ count }) => {
       <div className="result-control__view">
         <p>показывать по: </p>
         <div className="result-control__view-wrapper">
-          {[...Array.from({ length: 3 }).keys()].map((i) => (
+          {["5", "10", "20"].map((value) => (
             <button
-              key={["5", "10", "20"][i]}
-              className={`view-button${view.dataValue === ["5", "10", "20"][i] ? '_active' : ''}`}
+              key={value}
+              className={`view-button${view.dataValue === value ? '_active' : ''}`}
               type="button"
-              data-value={["5", "10", "20"][i]}
-              onClick={() => handleViewChange(["5", "10", "20"][i])}
-            >{`${["5", "10", "20"][i]} шт.`}</button>
+              data-value={value}
+              onClick={() => handleViewChange(value)}
+            >
+              {`${value} шт.`}
+            </button>
           ))}
         </div>
       </div>

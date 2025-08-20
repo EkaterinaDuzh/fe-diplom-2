@@ -9,9 +9,19 @@ const useAPI = (url) => {
     let isCancelled = false;
     
     fetch(url)
-      .then(response => {
-        if (!response.ok) throw new Error(`Ошибка сервера: ${response.status}`);
-        return response.json();
+      .then(async response => {
+        if (!response.ok) {
+          throw new Error(`Ошибка сервера: ${response.status}`);
+        }
+        
+        const contentType = response.headers.get('content-type');
+        if (!contentType || !contentType.includes('application/json')) {
+          const text = await response.text();
+          console.log('Received non-JSON response:', text.substring(0, 200));
+          throw new Error('Получен не-JSON ответ от сервера');
+        }
+        
+        return await response.json();
       })
       .then(data => {
         if (!isCancelled) {
@@ -20,9 +30,9 @@ const useAPI = (url) => {
         }
       })
       .catch(err => {
-        console.error(err);
+        console.error('API Error:', err);
         if (!isCancelled) {
-          setError('Возникла проблема с загрузкой данных.');
+          setError(`Возникла проблема с загрузкой данных: ${err.message}`);
           setLoading(false);
         }
       });

@@ -6,39 +6,48 @@ import ReactPaginate from 'react-paginate';
 import OrderTrain from '../OrderTrain/OrderTrain.jsx';
 import './OrderPagination.css';
 
-function Items({ data }) {
-  return data && data.items ? (
-    data.items.map((item, index) => <OrderTrain key={index} item={item} />)
-  ) : (
-    <>Результаты не найдены</>
-  );
+function Items({ data = null }) {
+  if (!data || !data.items || !Array.isArray(data.items)) {
+    return <>Результаты не найдены</>;
+  }
+  
+  return data.items.map((item, index) => (
+    <OrderTrain key={item?.departure?._id || index} item={item} />
+  ));
 }
 
 Items.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.object,
 };
 
-function PaginatedItems({ itemsPerPage, routes, onChange }) {
+function PaginatedItems({ itemsPerPage, routes = null, onChange = () => {} }) {
   const [pageCount, setPageCount] = useState(0);
-/* eslint-disable-next-line no-unused-vars */
   const [itemOffset, setItemOffset] = useState(0);
 
   const handlePageClick = ({ selected }) => {
+    if (!routes || !routes.items || !Array.isArray(routes.items)) return;
     const offset = Math.min(selected * itemsPerPage, routes.items.length);
     setItemOffset(offset);
     onChange(offset);
   };
 
   useEffect(() => {
-    if (!routes || !routes.items) return;
+    if (!routes || !routes.items || !Array.isArray(routes.items)) {
+      setPageCount(0);
+      return;
+    }
     const totalItems = routes.items.length;
     setPageCount(Math.ceil(totalItems / itemsPerPage));
   }, [itemsPerPage, routes]);
 
+  if (!routes) {
+    return <>Загрузка...</>;
+  }
+
   return (
     <>
       <Items data={routes} />
-      {routes && routes.items && routes.items.length > 0 && (
+      {routes.items && Array.isArray(routes.items) && routes.items.length > 0 && (
         <ReactPaginate
           className="pagination-wrapper"
           nextLabel=">"
@@ -67,11 +76,11 @@ function PaginatedItems({ itemsPerPage, routes, onChange }) {
 
 PaginatedItems.propTypes = {
   itemsPerPage: PropTypes.number.isRequired,
-  routes: PropTypes.object.isRequired,
+  routes: PropTypes.object,
   onChange: PropTypes.func,
 };
 
-function OrderPagination({ routes, onChange }) {
+function OrderPagination({ routes = null, onChange = () => {} }) {
   const { appState } = useContext(AppContext);
 
   return (
@@ -86,7 +95,7 @@ function OrderPagination({ routes, onChange }) {
 }
 
 OrderPagination.propTypes = {
-  routes: PropTypes.object.isRequired,
+  routes: PropTypes.object,
   onChange: PropTypes.func,
 };
 
